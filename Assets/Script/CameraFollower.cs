@@ -1,20 +1,21 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollower : MonoBehaviour
 {
-    [SerializeField] Transform target; 
+    public Transform target;
     
-    [SerializeField] private Vector3 offset = new Vector3(0, 3f, -8f); 
-    [SerializeField] private float smoothSpeed = 5f;
+    public float distance = 8f; 
+    public float height = 3f;    
+    public float smoothSpeed = 5f; 
 
     void LateUpdate()
     {
-        if (target ==null) return;
+        if (target == null) return;
         
-        Vector3 cameraPosition = target.position + offset;
-        transform.position = Vector3.Lerp(transform.position, cameraPosition, smoothSpeed * Time.deltaTime); 
-
-        Quaternion cameraRotation = Quaternion.LookRotation(target.position - transform.position); 
-        transform.rotation = Quaternion.Lerp(transform.rotation, cameraRotation, smoothSpeed * Time.deltaTime); 
+        Vector3 cameraPosition = target.position - (target.forward * distance) + (Vector3.up * height);
+        transform.position = Vector3.Lerp(transform.position, cameraPosition, smoothSpeed * Time.deltaTime);
+        
+        Quaternion targetRotation = Quaternion.LookRotation(target.position - transform.position);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothSpeed * Time.deltaTime);
     }
 }
