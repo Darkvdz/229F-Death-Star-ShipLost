@@ -14,5 +14,7 @@ public class ScoreManager : MonoBehaviour
     {
         currentScore += score;
         scoreText.text = "Score: " + currentScore.ToString();
+        
+        GameManager.instance.UpdateScore(currentScore);
     }
 }
