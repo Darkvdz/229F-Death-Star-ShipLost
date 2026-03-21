@@ -12,13 +12,13 @@ public class ShipController : MonoBehaviour
     [SerializeField] private float engineTorque;
 
     [Header("[Drag Setting]")]
-    // สูตร Fd = 1/2 * rho * v^2 * Cd * A
-    [SerializeField] private float rho = 1000f; // p (rho) ความหนาแน่นของน้ำ
-    [SerializeField] private float cd = 0.04f; // Cd สัมประสิทธิ์แรงต้านของรูปทรงเรือ
-    [SerializeField] private float area = 2.5f; // A พื้นที่หน้าตัดของเรือ (ตารางเมตร)
+    // สูตร Fd = 1/2 * rho * v^2 * Cd * A 
+    [SerializeField] private float rho = 1000f; // p (rho) คือความหนาแน่นของน้ำ
+    [SerializeField] private float cd = 0.04f; // Cd คือสัมประสิทธิ์แรงต้านของรูปทรงเรือ
+    [SerializeField] private float area = 2.5f; // A คือพื้นที่หน้าตัดของเรือ 
 
     [SerializeField] private float bounceForce = 20000f;
-    
+   
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,7 +38,7 @@ public class ShipController : MonoBehaviour
 
         if (currentSpeed > 0.1f)
         {
-            float speedSqared = currentSpeed * currentSpeed;
+            float speedSqared = currentSpeed * currentSpeed;//v^2
             Vector3 dragDirection = -rb.linearVelocity.normalized;
 
             float dragCalculation = 0.5f * rho * speedSqared * cd * area;

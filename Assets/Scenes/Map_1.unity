@@ -24453,7 +24453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time: 15'
+  m_text: 'Time: 60.00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29173,12 +29173,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb4aecf575610146baaa50559375ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  timelimit: 15
+  timelimit: 60
   targetScore: 50
   currentScore: 0
   isGameOver: 0
   timeText: {fileID: 1598968236}
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 1487572635}
   gameOverPanel: {fileID: 309682222}
 --- !u!1001 &1893285558
 PrefabInstance:
