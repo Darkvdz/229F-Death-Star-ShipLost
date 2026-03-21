@@ -7,11 +7,11 @@ public class ShipController : MonoBehaviour
     InputAction moveAction;
     
 
-    [Header("Engine Settings")] 
+    [Header("[Engine Settings]")] 
     [SerializeField] private float engineForce;
     [SerializeField] private float engineTorque;
 
-    [Header("Drag Setting")]
+    [Header("[Drag Setting]")]
     // สูตร Fd = 1/2 * rho * v^2 * Cd * A
     [SerializeField] private float rho = 1000f; // p (rho) ความหนาแน่นของน้ำ
     [SerializeField] private float cd = 0.04f; // Cd สัมประสิทธิ์แรงต้านของรูปทรงเรือ
