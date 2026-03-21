@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float timelimit = 15.0f;
     [SerializeField] private int targetScore = 50;
     [SerializeField] private int currentScore = 0;
-    [SerializeField] private bool isGameOver ;
+    [SerializeField] public bool isGameOver ;
     
     [Header("UI Reference")]
     [SerializeField] private TextMeshProUGUI timeText;
@@ -73,5 +73,10 @@ public class GameManager : MonoBehaviour
         {
             gameOverPanel.SetActive(true);
         }
+    }
+
+    public bool IsGameOver()
+    {
+        return isGameOver;
     }
 }
