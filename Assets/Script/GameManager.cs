@@ -16,6 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject gameOverPanel;
+    
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource; 
+    [SerializeField] private AudioClip winSound;     
+    [SerializeField] private AudioClip loseSound;
+    [SerializeField] private AudioClip bgmSound;
 
     private void Awake()
     {
@@ -30,6 +36,13 @@ public class GameManager : MonoBehaviour
         
         Time.timeScale = 1f;
         isGameOver = false;
+        
+        audioSource =  GetComponent<AudioSource>();
+        
+        audioSource.clip = bgmSound; 
+        audioSource.loop = true; 
+        audioSource.volume = 0.08f;
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -68,10 +81,12 @@ public class GameManager : MonoBehaviour
         if (isWin)
         {
             winPanel.SetActive(true);
+            audioSource.PlayOneShot(winSound);
         }
         else
         {
             gameOverPanel.SetActive(true);
+            audioSource.PlayOneShot(loseSound, 0.25f);
         }
     }
 
