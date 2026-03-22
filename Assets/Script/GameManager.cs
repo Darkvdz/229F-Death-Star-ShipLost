@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     
     [Header("GameManager Setting")]
     [SerializeField] private float timelimit = 15.0f;
-    [SerializeField] private int targetScore = 50;
+    [SerializeField] public int targetScore = 50;
     [SerializeField] private int currentScore = 0;
     [SerializeField] public bool isGameOver ;
     
@@ -80,12 +80,15 @@ public class GameManager : MonoBehaviour
 
         if (isWin)
         {
+            
             winPanel.SetActive(true);
-            audioSource.PlayOneShot(winSound);
+            audioSource.Stop();
+            audioSource.PlayOneShot(winSound, 2.0f);
         }
         else
         {
             gameOverPanel.SetActive(true);
+            audioSource.Stop();
             audioSource.PlayOneShot(loseSound, 0.25f);
         }
     }

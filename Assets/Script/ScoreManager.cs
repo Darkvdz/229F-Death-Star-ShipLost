@@ -7,14 +7,19 @@ public class ScoreManager : MonoBehaviour
     
     void Start()
     {
-        scoreText.text = "Score:0";
+        UpdateScoreDisplay();
     }
 
     public void Addscore(int score)
     {
         currentScore += score;
-        scoreText.text = "Score: " + currentScore.ToString();
+        UpdateScoreDisplay();
         
         GameManager.instance.UpdateScore(currentScore);
+    }
+
+    void UpdateScoreDisplay()
+    {
+        scoreText.text = "Score: " + currentScore + "/" + GameManager.instance.targetScore;
     }
 }
