@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private GameObject winPanel;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject creditsPanel;
     
     [Header("Audio Settings")]
     [SerializeField] private AudioSource audioSource; 
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     {
         winPanel.SetActive(false);
         gameOverPanel.SetActive(false);
+        creditsPanel.SetActive(false);
         
         Time.timeScale = 1f;
         isGameOver = false;
@@ -96,5 +98,15 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver()
     {
         return isGameOver;
+    }
+    
+    public void OpenCredits()
+    {
+        creditsPanel.SetActive(true); 
+    }
+
+    public void CloseCredits()
+    {
+        creditsPanel.SetActive(false);
     }
 }
