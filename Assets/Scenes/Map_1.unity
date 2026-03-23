@@ -40124,6 +40124,14 @@ PrefabInstance:
       propertyPath: cd
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 2991400405275204252, guid: 3216d62a3493ccf46ad81a70dece6659, type: 3}
+      propertyPath: engineForce
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2991400405275204252, guid: 3216d62a3493ccf46ad81a70dece6659, type: 3}
+      propertyPath: acceleration
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 8554220626371486826, guid: 3216d62a3493ccf46ad81a70dece6659, type: 3}
       propertyPath: m_Name
       value: WoodBoat

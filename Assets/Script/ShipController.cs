@@ -10,6 +10,8 @@ public class ShipController : MonoBehaviour
     [Header("[Engine Settings]")] 
     [SerializeField] private float engineForce;
     [SerializeField] private float engineTorque;
+    [SerializeField] private float acceleration = 10.0f;
+    private float mass;
 
     [Header("[Drag Setting]")]
     // สูตร Fd = 1/2 * rho * v^2 * Cd * A 
@@ -22,6 +24,8 @@ public class ShipController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        mass = rb.mass;
+        engineForce = mass * acceleration;
         moveAction = InputSystem.actions.FindAction("Move");
 
     }
